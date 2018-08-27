@@ -1,0 +1,12 @@
+{%include 'css.html' %}
+{% block content %}
+<div class = "container">
+    <h1>Login Form</h1>
+    <form action = "" method = "POST">
+        {% csrf_token %}
+        {{ form }}
+        <input class = "btn btn=submit" type="submit" value="Login">
+        <a class="btn" href="{% url "sign_up" %}">Sign Up</a>
+    </form>
+</div>
+{% endblock %}

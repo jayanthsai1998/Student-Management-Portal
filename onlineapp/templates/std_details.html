@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIST OF STUDENTS</title>
+    <style>
+        *{text-align : center;}
+        caption{color:yellow;}
+        body{background-color: black;}
+        th{color:lightgreen;}
+        td{color:cyan;}
+    </style>
+</head>
+
+<body><center>
+    <table border="1px">
+        <caption>STUDENT  DETAILS</caption>
+        <tr>
+            <th>Stuent Name</th>
+            <th>Student E-mail</th>
+            <th>Acronym</th>
+            <th>Marks</th>
+        </tr>
+
+        {% for item in studs %}
+        <tr>
+            <td>{{item.name }}</td>
+            <td>{{item.email }}</td>
+            <td>{{item.college__acronym }}</td>
+            <td><button onclick="window.location.href = '/mark_id/{{ item.pk }}' ">Marks</button></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</center>
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>JAY</title>-->
+    <!--<style>-->
+        <!--*{padding-left:5%;text-align : center;}-->
+        <!--caption{color:yellow;}-->
+        <!--body{background-color: black;}-->
+        <!--th{color:lightgreen;}-->
+        <!--td{color:cyan;}-->
+    <!--</style>-->
+<!--</head>-->
+
+<!--<body><center>-->
+    <!--<table>-->
+        <!--<caption>STUDENT  DETAILS</caption>-->
+        <!--<tr>-->
+            <!--<th>Stuent Name</th>-->
+            <!--<th>Student E-mail</th>-->
+            <!--<th>Acronym</th>-->
+        <!--</tr>-->
+
+        <!--{% for item in std_obj %}-->
+        <!--<tr>-->
+            <!--<td>{{item.name }}</td>-->
+            <!--<td>{{item.email }}</td>-->
+            <!--<td>{{item.college__acronym }}</td>-->
+        <!--</tr>-->
+        <!--{% endfor %}-->
+
+    <!--</table>-->
+<!--</center>-->
+<!--</body>-->
+<!--</html>-->

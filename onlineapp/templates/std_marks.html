@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Marks</title>
+    <style>
+        *{text-align : center;}
+        caption{color:yellow;}
+        body{background-color: black;}
+        th{color:lightgreen;}
+        td{color:cyan;}
+    </style>
+</head>
+<body>
+    <table border="1px">
+        <caption>{{ std.student__name }} Details</caption>
+        <tr>
+            <th>Problem 1</th>
+            <th>Problem 2</th>
+            <th>Problem 3</th>
+            <th>Problem 4</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td> {{ std.0.problem1 }} </td>
+            <td> {{ std.0.problem2 }} </td>
+            <td> {{ std.0.problem3 }} </td>
+            <td> {{ std.0.problem4 }} </td>
+            <td> {{ std.0.total }} </td>
+        </tr>
+    </table>
+
+</body>
+</html>

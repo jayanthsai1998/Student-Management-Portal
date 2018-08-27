@@ -1,0 +1,12 @@
+{% include 'base.html' %}
+{%include 'css.html' %}
+{% block content %}
+<div class = "container">
+    <h1>Update College</h1>
+    <form action = "" method = "POST">
+        {% csrf_token %}
+        {{ form }}
+        <input class = "btn btn=submit" type="submit" value="Update College">
+    </form>
+</div>
+{% endblock %}

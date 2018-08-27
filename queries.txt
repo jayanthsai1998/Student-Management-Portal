@@ -1,0 +1,88 @@
+CREATE TABLE `onlineapp_college`
+(`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+ `name` varchar(128) NOT NULL,
+ `location` varchar(64) NOT NULL,
+ `acronym` varchar(8) NOT NULL,
+ `contact` varchar(254) NOT NULL
+);
+COMMIT;
+
+
+
+
+
+CREATE TABLE `onlineapp_student`
+ (`id` integer AUTO_INCREMENT NOT NULL PRIMARY KEY,
+ `name` varchar(128) NOT NULL,
+ `dob` date NULL,
+ `email` varchar(254) NOT NULL,
+ `db_folder` varchar(
+50) NOT NULL, `dropped_out` bool NOT NULL
+);
+COMMIT;
+
+
+from django.core.wsgi import
+get_wsgi_application
+
+os.environ['DJANGO_SETTINGS_MODULE']=
+'myapp.settings'
+application = get_wsgi_application()
+
+
+"INSERT INTO onlineapp_student(name,dob,email,db_folder) values(name = " + students_data[i][1] +", dob = NULL"+ ", email = " + students_data[i][3] + ", db_folder = " + students_data[i][4] + ")"
+
+
+
+College.object.filter(location = 'Hyderbad').count()
+order_by(acronym="")
+sort by location --- get by location
+for 5 :  orderby()[:5]
+
+range query
+
+django query to get no.of colleges in all locationsColleg
+
+objects.values('location').anotate.Count('name')
+
+objects.aggregate(min('problem1'))
+
+College.objects.values("location").annotate(locCount=Count("location"))
+
+-> college count in each location group by based on sort by no.of colleges in each loc
+College.objects.values("location").annotate(locCount=Count("location")).order_by(loc_count)
+
+--> joins b/w two tables
+college.objects.filter(student_drop_out=True,distint=True)
+Student.objects.filter(dropped_out=True).values('college__name').distinct()
+
+-->  get the values from specific college
+like get all students from gvp
+obj.filter(clg__acronym="gvp").values("name")
+
+--> particular clg name
+ values('clg_name').annotate(Count('college_acronym'))
+good to take college_id
+
+--> Collegs.objects.values('acronym').anntate(Count('student__id'))
+
+--> for each student should get acronym of his clg
+ College.objects.values().annotate('clg_acronym')
+
+--> get all colleges with no_of_students > 10 and should sort the rows by student_count
+College.object.values("acronym").anotate(Count("student__id")).order_by("-student__id__count").filter(student__id__count__gte=10)
+
+-->name of student, his total, his clg
+
+--> csreating field using __
+
+--> create 
+
+
+
+
+
+
+
+
+

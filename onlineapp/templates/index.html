@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIST OF COLLEGES</title>
+    {% include 'base.html' %}
+    {%include 'css.html' %}
+    <!--<style>-->
+        <!--*{text-align : center;}-->
+        <!--caption{color:yellow;}-->
+        <!--body{background-color: black;}-->
+        <!--th{color:lightgreen;}-->
+        <!--td{color:cyan;}-->
+    <!--</style>-->
+</head>
+
+<body><center>
+    <!--<table border="1px">-->
+    <div class="container">
+    <table class="table">
+        <h3 align="center">PARTICIPATING  COLLEGES</h3>
+        <a class="btn" href="{% url "add_colleges" %}">Add College</a>
+        <tr>
+            <th>College Name</th>
+            <th>Acronym</th>
+            <th>Location</th>
+            <th>Contact</th>
+            <th>Options</th>
+        </tr>
+
+        {% for item in clg_obj %}
+        <tr>
+            <td>{{item.name }}</td>
+            <td><a href="{% url "particular_college" item.id %}">{{item.acronym }}</a></td>
+            <td>{{item.location}}</td>
+            <td>{{item.contact}}</td>
+            <td><a href="{% url "edit_college" item.id %}">Edit</a> | <a href="{% url "delete_college" item.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+        </div>
+</center>
+</body>
+</html>

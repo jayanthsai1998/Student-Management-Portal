@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LIST OF COLLEGES</title>
+    {% include 'base.html' %}
+    {%include 'css.html' %}
+    <!--<style>-->
+        <!--*{text-align : center;}-->
+        <!--caption{color:yellow;}-->
+        <!--body{background-color: black;}-->
+        <!--th{color:lightgreen;}-->
+        <!--td{color:cyan;}-->
+    <!--</style>-->
+</head>
+
+<body><center>
+    <div class="container">
+        <h1> STUDENTS OF {{particular_clg_obj.0.college}} COLLEGE</h1>
+        <a class="btn" href="{% url "add_student" college.id %}">Add Student</a>
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>DB Folder</th>
+            <th>Dropped Out</th>
+            <th>Total Marks</th>
+            <th>Options</th>
+        </tr>
+
+        {% for item in particular_clg_obj %}
+        <tr>
+            <td>{{item.name }}</td>
+            <td>{{item.email }}</td>
+            <td>{{item.db_folder }}</td>
+            <td>{{item.dropped_out }}</td>
+            <td>{{item.mocktest1.total}}</td>
+            <td><a href="{% url "edit_student" item.id %}"> <i class = "fa fa-edit"> == $0 ::before</i> </a> | <a href="{% url "delete_student" item.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+        </div>
+</center>
+</body>
+</html>
